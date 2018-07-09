@@ -27,9 +27,25 @@ module.exports = function(RED) {
              lcd.clear();
          }
 
+         if (msg.topic.localeCompare("on") == 0) {
+             lcd.on();
+         }
+         
+         if (msg.topic.localeCompare("off") == 0) {
+             lcd.off();
+         }
+         
+         if (msg.topic.localeCompare("blink_on") == 0) {
+             lcd.blink_on();
+         }
+         
+         if (msg.topic.localeCompare("blink_off") == 0) {
+             lcd.blink_off();
+         }
+
          if (msg.topic.localeCompare("line1") == 0) {
-         lcd.setCursor(0,0).then(function() {
-            lcd.print(msg.payload); });
+            lcd.setCursor(0,0).then(function() {
+               lcd.print(msg.payload); });
          }
 
          if (msg.topic.localeCompare("line2") == 0) {
