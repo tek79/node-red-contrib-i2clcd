@@ -28,19 +28,19 @@ module.exports = function(RED) {
          }
 
          if (msg.topic.localeCompare("on") == 0) {
-             lcd.on();
+             lcd.displayon();
          }
          
          if (msg.topic.localeCompare("off") == 0) {
-             lcd.off();
+             lcd.displayoff();
          }
          
          if (msg.topic.localeCompare("blink_on") == 0) {
-             lcd.blink_on();
+             lcd.blinkon();
          }
          
          if (msg.topic.localeCompare("blink_off") == 0) {
-             lcd.blink_off();
+             lcd.blinkoff();
          }
 
          if (msg.topic.localeCompare("line1") == 0) {
