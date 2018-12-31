@@ -1,6 +1,6 @@
 module.exports = function(RED) {
 
-   LCD = require('msantang78/i2c-lcd');
+   LCD = require('i2c-lcd');
    var lcd;
    
    function initLCD() {
