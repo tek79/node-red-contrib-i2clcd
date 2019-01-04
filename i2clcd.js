@@ -49,8 +49,7 @@ module.exports = function(RED) {
          if (msg.topic.localeCompare("line1") == 0) {
 //            lcd.setCursor(0,0).then(function() {
 //               lcd.print(msg.payload); });
-               lcd.setCursor(0,0);
-               lcd.print(msg.payload);
+              lcd.setCursor(0,0).then(lcd.print(msg.payload));
          }
 
          if (msg.topic.localeCompare("line2") == 0) {
