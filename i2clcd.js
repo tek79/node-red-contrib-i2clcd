@@ -13,8 +13,10 @@ module.exports = function(RED) {
       RED.nodes.createNode(this,config);
       var node = this;
       this.LCD_ADDR = parseInt(config.addr);
+      this.LCD_BUS = parseInt(config.bus);
       console.log("LCD node init @ i2c addr:" + this.LCD_ADDR);
-      lcd = new LCD("/dev/i2c-1",this.LCD_ADDR);
+      console.log("LCD node init @ i2c bus:" + this.LCD_BUS);
+      lcd = new LCD("/dev/i2c-" + this.LCD_BUS,this.LCD_ADDR);
       initLCD();
           
       this.on('input', function(msg) {
