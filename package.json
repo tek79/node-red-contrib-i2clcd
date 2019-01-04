@@ -1,7 +1,7 @@
 {
   "name": "node-red-contrib-i2clcd",
   "version": "0.0.1",
-  "description": "A node-red node that outputs to a 1602/1804 i2c LCD",
+  "description": "A node-red node that outputs to a 1602/2004 i2c LCD",
   "dependencies": {
     "i2c-lcd": "git+https://git@github.com/msantang78/i2c-lcd.git"
   },
