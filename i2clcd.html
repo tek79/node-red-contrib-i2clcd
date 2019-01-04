@@ -8,10 +8,14 @@
         <label for="node-input-addr"><i class="icon-asterisk"></i> i2c address</label>
         <input type="text" id="node-input-addr" placeholder="Address">
     </div>
+    <div class="form-row">
+        <label for="node-input-bus"><i class="icon-asterisk"></i> i2c bus number</label>
+        <input type="text" id="node-input-bus" placeholder="Bus">
+    </div>
 </script>
 
 <script type="text/x-red" data-help-name="i2clcd">
-    <p>write to 1602 LCD with i2c backpack</p>
+    <p>write to LCD with i2c backpack</p>
     
     <p>inject message with <b>msg.topic</b> as <i>line1</i> to <i>line4</i> and prints <b>msg.payload</b> to each line. </p>
     <p>inject message with <b>msg.topic</b> set to <i>init</i> to reinitialize screen</p>
@@ -22,8 +26,9 @@
         category: 'output',
         color: "#2C75FF",
         defaults: {
-            name: {value:"1602 LCD"},
+            name: {value:"i2c LCD"},
             addr: {value:"0x3f",required:true}
+            bus: {value:"1",required:true}
         },
         inputs:1,
         outputs:1,
