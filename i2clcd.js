@@ -48,22 +48,22 @@ module.exports = function(RED) {
 
          if (msg.topic.localeCompare("line1") == 0) {
              //lcd.setCursor(0,0)
-             lcd.println(msg.payload,1);
+             lcd.println(msg.payload, 1);
          }
 
          if (msg.topic.localeCompare("line2") == 0) {
             //lcd.setCursor(0,1)
-             lcd.println(msg.payload,2);
+             lcd.println(msg.payload, 2);
          }
          
          if (msg.topic.localeCompare("line3") == 0) {
             //lcd.setCursor(0,2)
-             lcd.println(msg.payload,3);
+             lcd.println(msg.payload, 3);
          }
          
          if (msg.topic.localeCompare("line4") == 0) {
             //lcd.setCursor(0,3)
-             lcd.println(msg.payload,4);
+             lcd.println(msg.payload, 4);
          }
          node.send(msg); //pass message through
       });
