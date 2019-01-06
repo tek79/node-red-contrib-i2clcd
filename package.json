@@ -9,7 +9,7 @@
     "node-red",
     "i2c-bus",
     "lcd",
-    "raspberry"
+    "raspberry",
     "orange"
   ],
   "node-red": {
