@@ -1,6 +1,6 @@
 module.exports = function(RED) {
 
-   LCD = require('i2c-lcd');
+   LCD = require('lcdi2c');
    var lcd;
    
    function initLCD() {
@@ -14,10 +14,10 @@ module.exports = function(RED) {
       var node = this;
       this.LCD_ADDR = parseInt(config.addr);
       this.LCD_BUS = parseInt(config.bus);
+      this.LCD_COLS = parseInt(config.cols);
+      this.LCD_ROWS = parseInt(config.rows);
       console.log("LCD node init @ i2c addr:" + this.LCD_ADDR);
-      console.log("LCD node init @ i2c bus:" + this.LCD_BUS);
-      //lcd = new LCD("/dev/i2c-"+this.LCD_BUS,this.LCD_ADDR);
-      lcd = new LCD(this.LCD_BUS,this.LCD_ADDR);
+      lcd = new LCD(this.LCD_BUS,this.LCD_ADDR,this.LCD_COLS,this.LCD_ROWS);
       initLCD();
           
       this.on('input', function(msg) {
@@ -49,7 +49,6 @@ module.exports = function(RED) {
          if (msg.topic.localeCompare("line1") == 0) {
              lcd.setCursor(0,0).then(function() {
                 lcd.print(msg.payload); });
-             //lcd.setCursor(0,0).then(lcd.print(msg.payload));
          }
 
          if (msg.topic.localeCompare("line2") == 0) {
