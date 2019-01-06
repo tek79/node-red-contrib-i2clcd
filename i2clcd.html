@@ -12,6 +12,14 @@
         <label for="node-input-bus"><i class="icon-asterisk"></i> i2c bus number</label>
         <input type="text" id="node-input-bus" placeholder="Bus">
     </div>
+    <div class="form-row">
+        <label for="node-input-cols"><i class="icon-asterisk"></i> LCD columns</label>
+        <input type="text" id="node-input-cols" placeholder="Columns">
+    </div>
+    <div class="form-row">
+        <label for="node-input-rows"><i class="icon-asterisk"></i> LCD rows</label>
+        <input type="text" id="node-input-rows" placeholder="Rows">
+    </div>
 </script>
 
 <script type="text/x-red" data-help-name="i2clcd">
@@ -28,7 +36,9 @@
         defaults: {
             name: {value:"i2c LCD"},
             addr: {value:"0x3f",required:true},
-            bus: {value:"1",required:true}
+            bus: {value:"1",required:true},
+            cols: {value:"20",required:true},
+            rows: {value:"4",required:true}
         },
         inputs:1,
         outputs:1,
