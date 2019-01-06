@@ -39,11 +39,11 @@ module.exports = function(RED) {
          }
          
          if (msg.topic.localeCompare("blink_on") == 0) {
-             lcd.blink_on();
+             lcd.blinkOn();
          }
          
          if (msg.topic.localeCompare("blink_off") == 0) {
-             lcd.blink_off();
+             lcd.blinkOff();
          }
 
          if (msg.topic.localeCompare("line1") == 0) {
