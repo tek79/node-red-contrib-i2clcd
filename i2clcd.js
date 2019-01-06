@@ -4,7 +4,7 @@ module.exports = function(RED) {
    var lcd;
    
    function initLCD() {
-      lcd.init();
+      lcd._init();
    };
 
    function LcdNode(config) {
@@ -23,7 +23,7 @@ module.exports = function(RED) {
       this.on('input', function(msg) {
          console.log("LCD input "+msg.topic);
          if (msg.topic.localeCompare("init") == 0) {
-             lcd.init();
+             lcd._init();
          }
          
          if (msg.topic.localeCompare("clear") == 0) {
