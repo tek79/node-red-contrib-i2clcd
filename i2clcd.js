@@ -47,23 +47,23 @@ module.exports = function(RED) {
          }
 
          if (msg.topic.localeCompare("line1") == 0) {
-             lcd.setCursor(0,0).then(function() {
-                lcd.print(msg.payload); });
+             lcd.setCursor(0,0)
+             lcd.print(msg.payload);
          }
 
          if (msg.topic.localeCompare("line2") == 0) {
-            lcd.setCursor(0,1).then(function() {
-               lcd.print(msg.payload); });
+            lcd.setCursor(0,1)
+             lcd.print(msg.payload);
          }
          
          if (msg.topic.localeCompare("line3") == 0) {
-            lcd.setCursor(0,2).then(function() {
-               lcd.print(msg.payload); });
+            lcd.setCursor(0,2)
+             lcd.print(msg.payload);
          }
          
          if (msg.topic.localeCompare("line4") == 0) {
-            lcd.setCursor(0,3).then(function() {
-               lcd.print(msg.payload); });
+            lcd.setCursor(0,3)
+             lcd.print(msg.payload);
          }
          node.send(msg); //pass message through
       });
