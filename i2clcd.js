@@ -311,13 +311,8 @@ module.exports = function(RED) {
 };
    
    var lcd;
-   
-   //function initLCD() {
-   //   lcd._init();
-   //};
 
    function LcdNode(config) {
-       
       console.log("creating LCD node");
       RED.nodes.createNode(this,config);
       var node = this;
@@ -327,7 +322,6 @@ module.exports = function(RED) {
       this.LCD_NUMROWS = parseInt(config.numrows);
       console.log("LCD node init @ i2c addr:" + this.LCD_ADDR);
       lcd = new LCD(this.LCD_BUS,this.LCD_ADDR,this.LCD_NUMCOLS,this.LCD_NUMROWS);
-      //initLCD();
           
       this.on('input', function(msg) {
          console.log("LCD input "+msg.topic);
