@@ -22,7 +22,7 @@ Requirements
 - 1602 or 2004 LCD panel that has a PCF8574P i2c driver
 - i2c-bus node (available in npm repo)
 
-^Notes^
+/Notes/
 
 - Fast updates can cause the display to glitch out, so consider using the Delay node in rate limiting mode if you have input that changes very quickly
 
