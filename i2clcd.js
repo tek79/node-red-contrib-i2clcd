@@ -99,7 +99,7 @@ module.exports = function(RED) {
         this.writeAsync(this.ENTRYMODESET | this.ENTRYLEFT, this.displayPorts.CMD); //shift cursor right
         //this._sleep(10);
         this.writeAsync(this.CLEARDISPLAY, this.displayPorts.CMD); // LCD clear
-
+        this._sleep(10);
         return this;
     };
 
