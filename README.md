@@ -2,32 +2,26 @@
 
 ![img here](img01.png)
 
-A simple node-red node that provides basic control of 1602 LCD's with i2c driver backpacks (using PCF8574P drivers). Based on the [i2c-lcd](https://github.com/sweetpi/i2c-lcd/) library.
+A simple node-red node that provides control of 1602/2004 LCDs with a PCF8574P i2c driver backpack. Based on the following libraries: https://github.com/sweetpi/i2c-lcd/
+https://github.com/johnty/node-red-contrib-i2clcd
+https://github.com/craigmw/lcdi2c
+https://github.com/wilberforce/lcd-pcf8574
 
-Use topic *line1* and *line2* to send message payload to each line, and topic *init* to clear screen. Currently not checking for lengths.
+Use topic *line1* through *line4* to send *msg.payload* to each line, and topic *clear* to clear screen. Messages will be truncated at the length specified in the node's column setting.
 
-Tested on Raspbian Jessie and should work with all RPi models.
+Updated to use i2c-bus instead of i2c, which will not compile on Armbian/Orange Pi.
 
+Tested on Armbian Bionic on Orange Pi Zero (H2) hardware under Node 10.15.0
 
 ##Requirements##
 
-- Raspberry Pi of your choice
-- A LCD 1602 panel that has an i2c driver
-- i2c-lcd (available in npm repo, but may require a manual compile since the i2c library v0.1.x do not compile on current node versions)
+- ARM-based SBC with i2c bus
+- 1602 or 2004 LCD panel that has a PCF8574P i2c driver
+- i2c-bus node (available in npm repo)
 
 ##Notes##
 
-- Designed to work with [Infusion System's PiShield](https://infusionsystems.com/pishield/) where everything is converted to 5V, but should also work directly by connecting directly to the i2c pins
-- Should work fine on a larger display (e.g. 2004), but addtional lines are not supported by default
-- Super fast updates can cause the display to glitch out, so consider using the Delay node in speed limiting mode if you have input that changes very quickly
-- Feel free to suggest new features and corrections!
+- Fast updates can cause the display to glitch out, so consider using the Delay node in rate limiting mode if you have input that changes very quickly
 
----
-Johnty Wang (johnty.wang@mail.mcgill.ca)
-
-Input Devices and Music Interaction Laboratory<br>
-McGill University
-
-In collaboration with Infusion Systems
-
-July 2016
+Tek79
+January 2019
