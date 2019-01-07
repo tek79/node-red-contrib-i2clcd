@@ -3,6 +3,7 @@ Intro and Usage
 ![img here](img01.png)
 
 A simple node-red node that provides control of 1602/2004 LCDs with a PCF8574P i2c driver backpack. Based on the following libraries:
+
 https://github.com/sweetpi/i2c-lcd/
 
 https://github.com/johnty/node-red-contrib-i2clcd
@@ -28,4 +29,5 @@ Notes
 - Fast updates can cause the display to glitch out, so consider using the Delay node in rate limiting mode if you have input that changes very quickly
 
 Tek79
+
 January 2019
