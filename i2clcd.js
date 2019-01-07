@@ -82,23 +82,23 @@ module.exports = function(RED) {
             }
         });
 
-        this._sleep(1000);
+        //this._sleep(1000);
 
-        this.write4(0x30, this.displayPorts.CMD); //initialization
-        this._sleep(200);
-        this.write4(0x30, this.displayPorts.CMD); //initialization
-        this._sleep(200);
-        this.write4(0x30, this.displayPorts.CMD); //initialization
-        this._sleep(200);
+        this.write4Async(0x30, this.displayPorts.CMD); //initialization
+        //this._sleep(200);
+        this.write4Async(0x30, this.displayPorts.CMD); //initialization
+        //this._sleep(200);
+        this.write4Async(0x30, this.displayPorts.CMD); //initialization
+        //this._sleep(200);
 
-        this.write4(this.FUNCTIONSET | this._4BITMODE | this._2LINE | this._5x10DOTS, this.displayPorts.CMD); //4 bit - 2 line 5x7 matrix
+        this.write4Async(this.FUNCTIONSET | this._4BITMODE | this._2LINE | this._5x10DOTS, this.displayPorts.CMD); //4 bit - 2 line 5x7 matrix
 
-        this._sleep(10);
-        this.write(this.DISPLAYCONTROL | this.DISPLAYON, this.displayPorts.CMD); //turn cursor off 0x0E to enable cursor
-        this._sleep(10);
-        this.write(this.ENTRYMODESET | this.ENTRYLEFT, this.displayPorts.CMD); //shift cursor right
-        this._sleep(10);
-        this.write(this.CLEARDISPLAY, this.displayPorts.CMD); // LCD clear
+        //this._sleep(10);
+        this.writeAsync(this.DISPLAYCONTROL | this.DISPLAYON, this.displayPorts.CMD); //turn cursor off 0x0E to enable cursor
+        //this._sleep(10);
+        this.writeAsync(this.ENTRYMODESET | this.ENTRYLEFT, this.displayPorts.CMD); //shift cursor right
+        //this._sleep(10);
+        this.writeAsync(this.CLEARDISPLAY, this.displayPorts.CMD); // LCD clear
 
         return this;
     };
