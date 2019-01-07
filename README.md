@@ -1,4 +1,4 @@
-Intro and Usage
+**Intro and Usage**
 
 ![img here](img01.png)
 
@@ -18,13 +18,13 @@ Updated to use i2c-bus instead of i2c, which will not compile on Armbian/Orange 
 
 Tested on Armbian Bionic on Orange Pi Zero (H2) hardware under Node 10.15.0
 
-Requirements
+**Requirements**
 
 - ARM-based SBC with i2c bus
 - 1602 or 2004 LCD panel that has a PCF8574P i2c driver
 - i2c-bus node (available in npm repo)
 
-Notes
+**Notes**
 
 - Fast updates can cause the display to glitch out, so consider using the Delay node in rate limiting mode if you have input that changes very quickly
 
