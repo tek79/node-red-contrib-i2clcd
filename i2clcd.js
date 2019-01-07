@@ -1,8 +1,6 @@
 module.exports = function(RED) {
-   
-   
-const i2c = require('i2c-bus');
-const sleep = require('sleep');
+   const i2c = require('i2c-bus');
+   const sleep = require('sleep');
 
    let LCD = class LCD {
     constructor(device, address, cols, rows) {
@@ -321,9 +319,9 @@ const sleep = require('sleep');
    
    var lcd;
    
-   function initLCD() {
-      lcd._init();
-   };
+   //function initLCD() {
+   //   lcd._init();
+   //};
 
    function LcdNode(config) {
        
@@ -336,7 +334,7 @@ const sleep = require('sleep');
       this.LCD_NUMROWS = parseInt(config.numrows);
       console.log("LCD node init @ i2c addr:" + this.LCD_ADDR);
       lcd = new LCD(this.LCD_BUS,this.LCD_ADDR,this.LCD_NUMCOLS,this.LCD_NUMROWS);
-      initLCD();
+      //initLCD();
           
       this.on('input', function(msg) {
          console.log("LCD input "+msg.topic);
