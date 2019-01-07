@@ -1,5 +1,5 @@
 {
-  "name": "node-red-contrib-i2clcd",
+  "name": "node-red-contrib-i2clcd-alt",
   "version": "0.0.1",
   "description": "A node-red node that outputs to a 1602/2004 i2c LCD",
   "dependencies": {
@@ -11,11 +11,13 @@
     "i2c-bus",
     "lcd",
     "raspberry",
-    "orange"
+    "orange",
+    "i2c",
+    "pcf8574p"
   ],
   "node-red": {
     "nodes": {
-      "i2clcd": "i2clcd.js"
+      "i2clcd-alt": "i2clcd.js"
     }
   },
   "repository": {
