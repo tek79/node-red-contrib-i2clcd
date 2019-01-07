@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "A node-red node that outputs to a 1602/2004 i2c LCD",
   "dependencies": {
-    "lcdi2c": "git+https://git@github.com/craigmw/lcdi2c.git"
+    "i2c-bus": "^1.0.2",
+    "sleep": "^3.0.1"
   },
   "keywords": [
     "node-red",
